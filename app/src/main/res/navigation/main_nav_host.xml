@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/main_nav_host"
+    app:startDestination="@id/breakingNewsFragment"
+    >
+
+    <fragment
+        android:id="@+id/articatlFragment"
+        android:name="com.androiddevs.mvvmnewsapp.fragment.ArticatlFragment"
+        android:label="ArticatlFragment" >
+        <argument
+            android:name="artical"
+            app:argType="com.androiddevs.mvvmnewsapp.model.Article"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/breakingNewsFragment"
+        android:name="com.androiddevs.mvvmnewsapp.fragment.BreakingNewsFragment"
+        android:label="BreakingNewsFragment" >
+        <action
+            android:id="@+id/action_breakingNewsFragment_to_articatlFragment"
+            app:destination="@id/articatlFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/searchNewsFragment"
+        android:name="com.androiddevs.mvvmnewsapp.fragment.SearchNewsFragment"
+        android:label="SearchNewsFragment" >
+        <action
+            android:id="@+id/action_searchNewsFragment_to_articatlFragment"
+            app:destination="@id/articatlFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/savedNewsFragment"
+        android:name="com.androiddevs.mvvmnewsapp.fragment.SavedNewsFragment"
+        android:label="SavedNewsFragment" >
+        <action
+            android:id="@+id/action_savedNewsFragment_to_articatlFragment"
+            app:destination="@id/articatlFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+</navigation>
